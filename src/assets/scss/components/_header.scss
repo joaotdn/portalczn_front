@@ -1,0 +1,59 @@
+$padding-x: rem-calc(3);
+
+#topbar {
+  padding-top: $padding-x;
+  padding-bottom: $padding-x;
+  background-color: $primary-color;
+  color: $white;
+  font-size: rem-calc(10);
+}
+
+#header {
+  border-bottom: 1px solid $light-gray;
+}
+
+.site-brand {
+  &:hover {
+    opacity: .8;
+  }
+
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(20);
+  }
+}
+
+#main-menu {
+  //background-color: $alert-color;
+  text-transform: uppercase;
+  a {
+    color: $medium-gray;
+    //font-family: $header-font-family;
+    &:hover, &.active {
+      color: $primary-color;
+    }
+  }
+  li {
+    font-weight: 900;
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+    //&:not(:first-child) {
+    //  a {
+    //    padding-left: 0;
+    //  }
+    //}
+  }
+}
+
+#header-features {
+  padding-top: rem-calc($padding-x);
+  padding-bottom: rem-calc($padding-x);
+  background-color: $alert-color;
+  font-size: rem-calc(12);
+
+  a {
+    @extend .white;
+  }
+}

@@ -57,8 +57,15 @@
 @include foundation-float-classes;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
-// @include foundation-prototype-classes;
+@include foundation-prototype-classes;
 
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+// Globals
+@import "global/bases";
+@import "global/typography";
+
+// Components
+@import "components/header";

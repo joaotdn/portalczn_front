@@ -1,0 +1,18 @@
+a {
+  -webkit-transition: color .3s linear, opacity .3s linear;
+  -moz-transition: color .3s linear, opacity .3s linear;
+  -ms-transition: color .3s linear, opacity .3s linear;
+  -o-transition: color .3s linear, opacity .3s linear;
+  transition: color .3s linear, opacity .3s linear;
+}
+
+.ads-container {
+  @extend .display-inline-block;
+}
+
+.ellipsis {
+  color: $white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
