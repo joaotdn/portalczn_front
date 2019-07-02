@@ -20,3 +20,9 @@ a {
   white-space: nowrap;
   overflow-x: hidden;
 }
+
+.margin-bottom-small-1 {
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(20);
+  }
+}

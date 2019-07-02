@@ -7,19 +7,47 @@ $lighten-header: lighten($light-gray, 5%);
   background-color: $primary-color;
   color: $white;
   font-size: rem-calc(10);
+  border-bottom: 1px solid $white;
 }
 
 #header {
   border-bottom: 2px solid $light-gray;
+
+  a[data-mobile-menu] {
+    font-size: rem-calc(24);
+  }
+}
+
+.weather-component {
+  background-color: $white;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  padding-top: $padding-x;
+  padding-bottom: $padding-x;
+  font-size: rem-calc(12);
+
+  header, i, span {
+    font-size: rem-calc(12);
+  }
+
+  header {
+    border-bottom: 1px dotted $light-gray;
+    padding-bottom: $padding-x;
+    margin-bottom: $padding-x;
+    color: $primary-color;
+    font-family: $header-font-family;
+  }
+
+  i, span {
+    color: $dark-gray;
+  }
 }
 
 .site-brand {
-  &:hover {
-    opacity: .8;
-  }
-
   @include breakpoint(small only) {
-    margin-bottom: rem-calc(20);
+    img {
+      width: rem-calc(140);
+    }
   }
 }
 
@@ -64,7 +92,7 @@ a.tv-link {
   background-color: $lighten-header;
   font-size: rem-calc(12);
   border-bottom: 1px solid $alert-color;
-  border-top: 1px solid $light-gray;
+  border-top: 1px solid #ffffff;
 
   a {
     &.nav {

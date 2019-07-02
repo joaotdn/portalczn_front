@@ -18,9 +18,8 @@
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <div class="cell auto">
-                <span class="weather-mini display-inline-block"><i
-                        class="fas fa-cloud-sun"></i> 36º Cajazeiras/PB</span>
-                <span class="margin-left-1 display-inline-block">12 de maio de 2019</span>
+                <span class="weather-mini margin-right-1 hide-for-large"><i class="fas fa-cloud-sun"></i> 36º Cajazeiras/PB</span>
+                <span class="display-inline-block"><i class="far fa-calendar-alt"></i> Quinta-feira, 12 de maio de 2019</span>
             </div>
 
             <div class="cell auto text-right show-for-medium">
@@ -34,18 +33,49 @@
     </div>
 </section><header id="header" class="container padding-top-1 padding-bottom-1" role="banner">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <figure class="cell small-12 medium-4 large-3 margin-0 text-center medium-text-left" role="figure">
-                <a href="#" title="Página principal" class="display-inline-block site-brand">
+        <div class="grid-x grid-padding-x align-middle">
+            <figure class="cell auto large-3 margin-0 site-brand margin-bottom-small-1" role="figure">
+                <a href="#" title="Página principal" class="display-inline-block">
                     <img src="assets/img/logo.png" alt="Logo da CZN">
                 </a>
             </figure>
 
-            <figure class="cell auto margin-0 text-center medium-text-right" role="figure">
+            <div class="cell shrink margin-bottom-small-1 text-right hide-for-large">
+                <span class="margin-right-1 display-inline-block">
+                    <a href="#" role="button" data-mobile-menu><i class="fas fa-bars"></i></a>
+                </span>
+            </div>
+
+            <figure class="cell small-12 medium-8 large-7 margin-0 text-center medium-text-right" role="figure">
                 <a href="#" title="Adsense">
                     <img src="assets/img/adsa.jpg" alt="Logo da CZN">
                 </a>
             </figure>
+
+            <div class="cell large-2 show-for-large">
+                <div class="weather-component width-100">
+                    <header class="width-100 text-center text-uppercase">
+                        <strong>Cajazeiras/PB</strong>
+                    </header>
+                    <div class="grid-container">
+                        <div class="grid-x align-middle">
+                            <div class="cell auto text-center">
+                                <div class="width-100"><span>02/07</span></div>
+                                <div class="width-100"><span><i class="fas fa-cloud-sun"></i> 36°</span></div>
+                            </div>
+                
+                            <div class="cell auto text-center">
+                                <div class="width-100"><span>03/07</span></div>
+                                <div class="width-100"><span><i class="fas fa-cloud"></i> 26°</span></div>
+                            </div>
+                
+                            <div class="cell auto text-center">
+                                <div class="width-100"><span>04/07</span></div>
+                                <div class="width-100"><span><i class="fas fa-cloud-showers-heavy"></i> 22°</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            </div>
         </div>
     </div>
 </header>
@@ -62,12 +92,6 @@
                     <li><a href="#" title="">Mundo</a></li>
                     <li><a href="#" title="" class="tv-link"><i class="fas fa-play"></i> TV</a></li>
                 </ul>
-            </div>
-
-            <div class="cell shrink hide-for-large">
-                <span class="margin-right-1 display-inline-block">
-                    <a href="#" role="button" data-mobile-menu><i class="fas fa-bars"></i></a>
-                </span>
             </div>
 
             <div class="cell auto large-4 text-right">
@@ -98,5 +122,7 @@
 
 <script src="https://kit.fontawesome.com/5ef691494b.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="http://malsup.github.io/min/jquery.cycle2.min.js"></script>
+<script src="http://malsup.github.io/min/jquery.cycle2.swipe.min.js"></script>
 </body>
 </html>
