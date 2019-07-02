@@ -1,4 +1,5 @@
-$padding-x: rem-calc(3);
+$padding-x: rem-calc(8);
+$lighten-header: lighten($light-gray, 5%);
 
 #topbar {
   padding-top: $padding-x;
@@ -9,7 +10,7 @@ $padding-x: rem-calc(3);
 }
 
 #header {
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 2px solid $light-gray;
 }
 
 .site-brand {
@@ -25,15 +26,15 @@ $padding-x: rem-calc(3);
 #main-menu {
   //background-color: $alert-color;
   text-transform: uppercase;
-  a {
-    color: $medium-gray;
+  a:not(.search), a:not(.tv-link) {
+    color: $dark-gray;
     //font-family: $header-font-family;
     &:hover, &.active {
       color: $primary-color;
     }
   }
   li {
-    font-weight: 900;
+    font-weight: 700;
     &:first-child {
       a {
         padding-left: 0;
@@ -45,15 +46,57 @@ $padding-x: rem-calc(3);
     //  }
     //}
   }
+
+  .shrink {
+    line-height: rem-calc(38);
+    font-size: rem-calc(20);
+  }
+}
+
+a.tv-link {
+  color: $alert-color !important;
+  font-weight: 900;
 }
 
 #header-features {
   padding-top: rem-calc($padding-x);
   padding-bottom: rem-calc($padding-x);
-  background-color: $alert-color;
+  background-color: $lighten-header;
   font-size: rem-calc(12);
+  border-bottom: 1px solid $alert-color;
+  border-top: 1px solid $light-gray;
 
   a {
-    @extend .white;
+    &.nav {
+      color: $alert-color;
+    }
+  }
+
+  .font-bold {
+    color: $alert-color;
+  }
+}
+
+.search {
+  line-height: rem-calc(38);
+}
+
+#form-search {
+  input, .input-group-label {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+
+  input {
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .input-group-label {
+    color: $dark-gray;
   }
 }

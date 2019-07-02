@@ -21556,6 +21556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! what-input */ "./node_modules/what-input/dist/what-input.js");
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(what_input__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib_offcanvas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/offcanvas */ "./src/assets/js/lib/offcanvas.js");
 
  // Foundation JS relies on a global varaible. In ES6, all imports are hoisted
 // to the top of the file so if we used`import` to import Foundation,
@@ -21570,7 +21571,40 @@ __webpack_require__(/*! foundation-sites */ "./node_modules/foundation-sites/dis
 //import './lib/foundation-explicit-pieces';
 
 
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+
+/***/ }),
+
+/***/ "./src/assets/js/lib/offcanvas.js":
+/*!****************************************!*\
+  !*** ./src/assets/js/lib/offcanvas.js ***!
+  \****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var offcanvas = function offcanvas() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-mobile-menu]').on('click', function () {
+    var canvas = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.offcanvas-layer');
+    var menu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-offcanvas');
+
+    if (canvas.hasClass('active') && menu.hasClass('active')) {
+      canvas.removeClass('active');
+      menu.removeClass('active');
+    } else {
+      canvas.addClass('active');
+      menu.addClass('active');
+    }
+  });
+};
+
+offcanvas();
 
 /***/ }),
 

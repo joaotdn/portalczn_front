@@ -10,21 +10,29 @@
 </head>
 <body>
 
-<section id="topbar" class="container">
+<div id="menu-offcanvas" class="container position-fixed height-100">
+
+</div>
+
+<a href="#" class="width-100 height-100 position-fixed offcanvas-layer" data-mobile-menu></a><section id="topbar" class="container">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <div class="cell auto">
-                <span class="weather-mini display-inline-block"><i class="fas fa-cloud-sun"></i> 36º Cajazeiras/PB</span>
+                <span class="weather-mini display-inline-block"><i
+                        class="fas fa-cloud-sun"></i> 36º Cajazeiras/PB</span>
                 <span class="margin-left-1 display-inline-block">12 de maio de 2019</span>
             </div>
-            <div class="cell auto text-right">
-                <span class="display-inline-block margin-right-1"><a href="tel:988888888" target="_blank" class="white"><i class="fas fa-phone-alt"></i> (83) 98888.9847</a></span>
-                <span><a href="#" target="_blank" class="white"><i class="far fa-envelope"></i> Fale conosco</a></span>
+
+            <div class="cell auto text-right show-for-medium">
+                <span class="display-inline-block margin-right-1"><a href="tel:988888888" target="_blank" class="white"><i
+                        class="fas fa-phone-alt"></i> (83) 98888.9847</a></span>
+                <span><a href="#" target="_blank" class="white margin-right-1"><i class="far fa-envelope"></i> Fale conosco</a></span>
+                <span class="display-inline-block"><a href="#" target="_blank" title="Ir para a fanpage"
+                                                      class="white"><i class="fab fa-facebook"></i> Siga-nos</a></span>
             </div>
         </div>
     </div>
-</section>
-<header id="header" class="container padding-top-1 padding-bottom-1">
+</section><header id="header" class="container padding-top-1 padding-bottom-1" role="banner">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
             <figure class="cell small-12 medium-4 large-3 margin-0 text-center medium-text-left" role="figure">
@@ -41,7 +49,6 @@
         </div>
     </div>
 </header>
-
 <nav id="main-menu" class="container" role="navigation">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
@@ -53,16 +60,23 @@
                     <li><a href="#" title="">Esportes</a></li>
                     <li><a href="#" title="">Brasil</a></li>
                     <li><a href="#" title="">Mundo</a></li>
+                    <li><a href="#" title="" class="tv-link"><i class="fas fa-play"></i> TV</a></li>
                 </ul>
             </div>
 
-            <div class="cell small-12 large-4">
-                <div class="input-group">
-                    <input class="input-group-field" type="search">
-                    <div class="input-group-button">
-                        <input type="submit" class="button" value="Submit">
+            <div class="cell shrink hide-for-large">
+                <span class="margin-right-1 display-inline-block">
+                    <a href="#" role="button" data-mobile-menu><i class="fas fa-bars"></i></a>
+                </span>
+            </div>
+
+            <div class="cell auto large-4 text-right">
+                <form action="" id="form-search">
+                    <div class="input-group margin-0">
+                        <label for="search-input" class="input-group-label padding-left-0"><i class="fas fa-search"></i></label>
+                        <input type="search" id="search-input" class="input-group-field" placeholder="Pesquisar...">
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -74,9 +88,9 @@
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam, cumque, doloremque ducimus expedita impedit minima minus necessitatibus, nobis officia officiis pariatur quas quia quos reprehenderit sed sunt veritatis.</span>
             </div>
 
-            <div class="cell small-4 text-right">
-                <span><a href="#" class="display-inline-block prev"><i class="fas fa-chevron-left"></i></a></span>
-                <span><a href="#" class="display-inline-block next"><i class="fas fa-chevron-right"></i></a></span>
+            <div class="cell small-2 medium-1 text-right">
+                <span><a href="#" class="display-inline-block nav prev"><i class="fas fa-chevron-left"></i></a></span>
+                <span><a href="#" class="display-inline-block nav next"><i class="fas fa-chevron-right"></i></a></span>
             </div>
         </div>
     </div>
