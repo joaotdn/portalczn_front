@@ -11093,16 +11093,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var offcanvas = function offcanvas() {
-  var canvas = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.offcanvas-layer');
-  var menu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-offcanvas');
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-mobile-menu]').on('click', function () {
-    if (canvas.hasClass('active') && menu.hasClass('active')) {
-      canvas.removeClass('active');
-      menu.removeClass('active');
-    } else {
-      canvas.addClass('active');
-      menu.addClass('active');
-    }
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-offcanvas, .offcanvas-layer').toggleClass('active');
   });
 };
 
