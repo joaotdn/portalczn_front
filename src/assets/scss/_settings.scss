@@ -372,10 +372,10 @@ $drilldown-arrow-size: 6px;
 // 17. Dropdown
 // ------------
 
-$dropdown-padding: 1rem;
+$dropdown-padding: rem-calc(10);
 $dropdown-background: $body-background;
-$dropdown-border: 1px solid $medium-gray;
-$dropdown-font-size: 1rem;
+$dropdown-border: 1px solid $light-gray;
+$dropdown-font-size: rem-calc(14);
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (
@@ -866,4 +866,3 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
-

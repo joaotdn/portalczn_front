@@ -6,3 +6,93 @@
 .font-header {
   font-family: 'Roboto', sans-serif;
 }
+
+
+// headlines
+.headline-kicker {
+  font-size: rem-calc(12);
+  @extend .font-header;
+  @extend .text-uppercase;
+  color: $primary-color;
+}
+
+.headline-url {
+  @extend .font-header;
+  a {
+    color: $black;
+  }
+}
+
+.headline-excerpt {
+  color: $dark-gray;
+  font-size: rem-calc(14);
+  line-height: 1.5;
+}
+
+.headlines-group {
+  @extend .position-relative;
+  a {
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  img {
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -ms-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.headline-1 {
+  @include breakpoint(large up) {
+    h1 {
+      font-size: rem-calc(32);
+      line-height: 1.2;
+    }
+  }
+}
+
+.headline-medium-v {
+  @include breakpoint(large up) {
+    h1 {
+      font-size: rem-calc(26);
+      line-height: 1.2;
+    }
+  }
+}
+
+.headline-small {
+  @include breakpoint(large up) {
+    h1 {
+      font-size: rem-calc(22);
+      line-height: 1.2;
+    }
+  }
+}
+
+.open-share {
+  float: right;
+  cursor: pointer;
+  color: $medium-gray;
+  -webkit-transition: color .3s;
+  -moz-transition: color .3s;
+  -ms-transition: color .3s;
+  -o-transition: color .3s;
+  transition: color .3s;
+
+  &:hover {
+    color: $dark-gray;
+  }
+}
+
+// cells
+.two-columns {
+  @include breakpoint(medium up) {
+    @include xy-cell(6);
+  }
+}

@@ -4,15 +4,13 @@ $lighten-header: lighten($light-gray, 5%);
 #topbar {
   padding-top: $padding-x;
   padding-bottom: $padding-x;
-  background-color: $primary-color;
+  background-color: darken($primary-color, 15%);
   color: $white;
   font-size: rem-calc(10);
   border-bottom: 1px solid $white;
 }
 
 #header {
-  border-bottom: 2px solid $light-gray;
-
   a[data-mobile-menu] {
     font-size: rem-calc(24);
   }
@@ -31,7 +29,6 @@ $lighten-header: lighten($light-gray, 5%);
   }
 
   header {
-    border-bottom: 1px dotted $light-gray;
     padding-bottom: $padding-x;
     margin-bottom: $padding-x;
     color: $primary-color;
@@ -54,15 +51,18 @@ $lighten-header: lighten($light-gray, 5%);
 #main-menu {
   //background-color: $alert-color;
   text-transform: uppercase;
+  padding-top: rem-calc(5);
   a:not(.search), a:not(.tv-link) {
-    color: $dark-gray;
+    color: darken($primary-color, 15%);
     //font-family: $header-font-family;
     &:hover, &.active {
       color: $primary-color;
     }
   }
+
   li {
     font-weight: 700;
+
     &:first-child {
       a {
         padding-left: 0;
@@ -73,6 +73,15 @@ $lighten-header: lighten($light-gray, 5%);
     //    padding-left: 0;
     //  }
     //}
+  }
+
+  .grid-container {
+    border-top: 1px solid $light-gray;
+
+    > div {
+      padding-top: rem-calc(3);
+      border-top: 1px solid $white;
+    }
   }
 
   .shrink {

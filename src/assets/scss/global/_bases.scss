@@ -1,7 +1,18 @@
-//html, body {
-//  @extend .height-100;
-//  @extend .width-100;
-//}
+html, body {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  -webkit-box-shadow: inset 0px 19px 64px -30px rgba(0,0,0,0.17);
+  -moz-box-shadow: inset 0px 19px 64px -30px rgba(0,0,0,0.17);
+  box-shadow: inset 0px 19px 64px -30px rgba(0,0,0,0.17);
+}
+
 a {
   -webkit-transition: color .3s linear, opacity .3s linear;
   -moz-transition: color .3s linear, opacity .3s linear;
