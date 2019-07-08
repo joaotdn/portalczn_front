@@ -17,26 +17,32 @@ $lighten-header: lighten($light-gray, 5%);
 }
 
 .weather-component {
-  background-color: $white;
-  border: 1px solid $light-gray;
+  border: 2px solid #ffffff;
   border-radius: 4px;
-  padding-top: $padding-x;
-  padding-bottom: $padding-x;
-  font-size: rem-calc(12);
+  height: rem-calc(90);
+  color: darken($dark-gray, 15%);
+  position: relative;
 
-  header, i, span {
-    font-size: rem-calc(12);
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url(../img/wh-min.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 4px;
+    opacity: .6;
   }
 
-  header {
-    padding-bottom: $padding-x;
-    margin-bottom: $padding-x;
-    color: $primary-color;
-    font-family: $header-font-family;
-  }
-
-  i, span {
-    color: $dark-gray;
+  > div {
+    position: relative;
+    z-index: 1;
   }
 }
 

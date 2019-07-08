@@ -12324,12 +12324,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(what_input__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_offcanvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/offcanvas */ "./src/assets/js/lib/offcanvas.js");
+/* harmony import */ var _lib_cycle_settings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/cycle-settings */ "./src/assets/js/lib/cycle-settings.js");
 
 
 window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).foundation();
+
+/***/ }),
+
+/***/ "./src/assets/js/lib/cycle-settings.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/lib/cycle-settings.js ***!
+  \*********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+var progress = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#progress'),
+    slideshow = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.slide-items');
+slideshow.on('cycle-initialized cycle-before', function (e, opts) {
+  progress.stop(true).css('width', 0);
+});
+slideshow.on('cycle-initialized cycle-after', function (e, opts) {
+  if (!slideshow.is('.cycle-paused')) progress.animate({
+    width: '100%'
+  }, opts.timeout, 'linear');
+});
+slideshow.on('cycle-paused', function (e, opts) {
+  progress.stop();
+});
+slideshow.on('cycle-resumed', function (e, opts, timeoutRemaining) {
+  progress.animate({
+    width: '100%'
+  }, timeoutRemaining, 'linear');
+});
 
 /***/ }),
 
