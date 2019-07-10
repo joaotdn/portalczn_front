@@ -84,4 +84,43 @@
     padding-bottom: rem-calc(16);
   }
 }
+
+.stack-component {
+  @include breakpoint(small only) {
+    margin-top: rem-calc(16);
+  }
+  li {
+    display: inline-block;
+    width: 100%;
+    font-size: rem-calc(13);
+    text-transform: uppercase;
+    @extend .font-header;
+
+    &:not(:first-child) {
+      padding-top: rem-calc(6);
+      margin-top: rem-calc(6);
+      border-top: 1px solid $light-gray;
+    }
+
+    span {
+      float: right;
+    }
+  }
+
+  > div {
+    padding: rem-calc(16);
+    background-color: $white;
+    //max-width: rem-calc(300);
+    border-radius: 6px;
+    border: 2px solid $light-gray;
+  }
+
+  .red {
+    color: rgba($alert-color, 1);
+  }
+  .green {
+    color: rgba($success-color, 1);
+  }
+}
+
 // SECTION ONE
