@@ -17,48 +17,18 @@ $lighten-header: lighten($light-gray, 5%);
 }
 
 .weather-component {
-  border: 2px solid #ffffff;
-  border-radius: 4px;
-  height: rem-calc(90);
-  position: relative;
-  display: flex;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-image: url(../img/wh-min.jpg);
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    border-radius: 4px;
-    opacity: .5;
-  }
-
-  > div {
-    position: relative;
-    z-index: 1;
-  }
-
   span {
-    font-size: rem-calc(14);
-    font-weight: 700;
-    color: $primary-color;
+    font-size: rem-calc(13);
   }
-
+  .icon {
+    font-size: rem-calc(30);
+    color: $warning-color;
+  }
   .min {
-    color: lighten($primary-color, 20%);
-    float: left;
+    color: rgba($primary-color, .5);
   }
-
   .max {
-    color: lighten($alert-color, 20%);
-    float: right;
+    color: rgba($alert-color, .5);
   }
 }
 
@@ -98,11 +68,11 @@ $lighten-header: lighten($light-gray, 5%);
   }
 
   .grid-container {
-    border-top: 1px solid $light-gray;
+    //border-top: 1px solid $light-gray;
 
     > div {
       padding-top: rem-calc(3);
-      border-top: 1px solid $white;
+      //border-top: 1px solid $white;
     }
   }
 
@@ -122,8 +92,8 @@ a.tv-link {
   padding-bottom: rem-calc($padding-x);
   background-color: $lighten-header;
   font-size: rem-calc(12);
-  border-bottom: 1px solid $medium-gray;
-  border-top: 1px solid #ffffff;
+  border-bottom: 2px solid $light-gray;
+  border-top: 2px solid #ffffff;
 
   a {
     color: $dark-gray;
@@ -145,6 +115,14 @@ a.tv-link {
 }
 
 #form-search {
+  @include breakpoint(large up) {
+    padding-left: rem-calc(16);
+    background-color: #fff;
+    -webkit-border-radius: 6px 6px 0 0;
+    -moz-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+  }
+
   input, .input-group-label {
     border: none;
     padding-top: 0;
@@ -161,5 +139,9 @@ a.tv-link {
 
   .input-group-label {
     color: $dark-gray;
+  }
+
+  i {
+    color: $primary-color;
   }
 }

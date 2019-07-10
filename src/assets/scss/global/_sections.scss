@@ -1,0 +1,87 @@
+.section-bg-primary {
+  background-color: rgba($primary-color, .1);
+}
+
+.section-bg-light {
+  background-color: rgba($light-gray, .4);
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid $light-gray;
+}
+
+.section-header {
+  @include breakpoint(large up) {
+    h2 {
+      font-size: rem-calc(28);
+    }
+  }
+
+  h2 {
+    position: relative;
+    margin: 0;
+
+    &::before {
+      width: 50%;
+      content: '';
+      display: block;
+      position: absolute;
+      top: rem-calc(-3);
+      left: 0;
+      height: rem-calc(3);
+      background-color: $alert-color;
+    }
+  }
+
+  &.primary {
+    h2 {
+      > a {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.header-menu {
+  opacity: .7;
+
+  li {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+    position: relative;
+
+    &:not(:first-child) {
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: rgba($primary-color, .5);
+      }
+    }
+
+    &:last-child {
+      a {
+        padding-right: 0;
+      }
+    }
+  }
+
+  a {
+    padding-top: 0;
+    padding-bottom: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.white-container {
+  header {
+    font-size: rem-calc(12);
+    color: $dark-gray;
+    padding-bottom: rem-calc(16);
+  }
+}
+// SECTION ONE

@@ -31,12 +31,14 @@
 
 .headlines-group {
   @extend .position-relative;
+
   a {
     &:hover {
       color: $primary-color;
     }
   }
-  img {
+
+  img:not([data-ads]) {
     -webkit-transition: opacity .3s;
     -moz-transition: opacity .3s;
     -ms-transition: opacity .3s;
@@ -50,8 +52,10 @@
   }
 
   @include breakpoint(small only) {
-    img {
-      display: none;
+    &.hide-img {
+      img:not([data-ads]) {
+        display: none;
+      }
     }
   }
 }
