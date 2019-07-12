@@ -72,7 +72,7 @@
 }
 
 .headline-medium-v {
-  @include breakpoint(large up) {
+  @include breakpoint(medium up) {
     h1 {
       font-size: rem-calc(26);
       line-height: 1.2;

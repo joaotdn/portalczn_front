@@ -37,3 +37,14 @@ a {
     margin-bottom: rem-calc(20);
   }
 }
+
+.bgcover {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.float-left {
+  float: left;
+}
