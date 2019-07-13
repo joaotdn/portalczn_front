@@ -139,7 +139,7 @@ $videos-bgcolor: #1f2125;
     a {
       color: $white;
       i {
-        color: darken($alert-color, 12%);
+        color: $white;
       }
     }
     h2 {
@@ -149,7 +149,7 @@ $videos-bgcolor: #1f2125;
       display: inline-block;
       margin: 0;
       padding: rem-calc(10 12);
-      background: $alert-color;
+      background: rgba($alert-color, .7);
       font-weight: 400;
       //font-style: italic;
     }
@@ -188,7 +188,7 @@ $videos-bgcolor: #1f2125;
   h2 {
     font-size: rem-calc(24);
   }
-  a {
+  a:not(.all-video-btn) {
     color: $white;
     &:hover {
       color: $alert-color;
@@ -257,10 +257,30 @@ $videos-bgcolor: #1f2125;
   }
 }
 
+.all-video-btn {
+  padding: rem-calc(16);
+  background-color: lighten($videos-bgcolor, 5%);
+  @extend .font-header;
+  font-size: rem-calc(14);
+  text-transform: uppercase;
+  border-radius: 6px;
+  color: $medium-gray;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  font-weight: 700;
+
+  &:hover {
+    box-shadow: none;
+    color: $light-gray;
+  }
+}
+
 #radios-widget {
   background-color: $primary-color;
-  border-radius: $global-radius;
-
+  border-radius: 4px;
   h4 {
     color: $white;
     font-size: rem-calc(14);
