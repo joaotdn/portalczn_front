@@ -51,3 +51,11 @@ a {
 .float-right {
   float: right;
 }
+
+.bg-white {
+  @include breakpoint(large up) {
+    background-color: $white;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+  }
+}

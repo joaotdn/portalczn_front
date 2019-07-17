@@ -439,7 +439,7 @@ $alpha-album: .5;
     color: $white;
   }
 
-  @include breakpoint(large up) {
+  @include breakpoint(medium up) {
     height: rem-calc(400);
 
     h2 {
@@ -541,11 +541,82 @@ $alpha-album: .5;
 }
 
 .tv-diario {
+  @include breakpoint(small only) {
+    margin-top: rem-calc(16);
+  }
   header {
     color: $alert-color;
     margin-bottom: rem-calc(24);
     padding-bottom: rem-calc(16);
     border-bottom: 2px solid $alert-color;
     font-size: rem-calc(18);
+  }
+}
+
+.popular-article {
+  > div {
+    height: rem-calc(318);
+    overflow: hidden;
+    padding-left: rem-calc(16);
+    padding-right: rem-calc(16);
+
+    &:hover {
+      figure  {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  figure {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    a {
+      background-image: linear-gradient(to bottom, $black, transparent);
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  header {
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    a {
+      color: $white;
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(24);
+  }
+
+  h4 {
+    color: $alert-color;
+    font-size: rem-calc(18);
+    text-transform: uppercase;
+  }
+
+  @include breakpoint(medium only) {
+    h2 {
+      font-size: rem-calc(18);
+      padding: rem-calc(0 16);
+    }
+
+    > div {
+      height: rem-calc(250);
+    }
   }
 }
