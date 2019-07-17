@@ -539,3 +539,13 @@ $alpha-album: .5;
     }
   }
 }
+
+.tv-diario {
+  header {
+    color: $alert-color;
+    margin-bottom: rem-calc(24);
+    padding-bottom: rem-calc(16);
+    border-bottom: 2px solid $alert-color;
+    font-size: rem-calc(18);
+  }
+}
