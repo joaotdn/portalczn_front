@@ -620,3 +620,25 @@ $alpha-album: .5;
     }
   }
 }
+
+.component-loteria {
+  > div {
+    padding: rem-calc(16);
+    background-image: linear-gradient(to top, rgba($primary-color, .6), $white);
+    border-radius: 6px;
+  }
+}
+
+.accordion-title {
+  text-transform: uppercase;
+  @extend .font-header;
+  font-weight: 700;
+
+  &:hover, &:focus {
+    color: $white;
+  }
+
+  &.megasena {
+    background-color: darken($success-color, 15%);
+  }
+}
