@@ -624,7 +624,7 @@ $alpha-album: .5;
 .component-loteria {
   > div {
     padding: rem-calc(16);
-    background-image: linear-gradient(to top, rgba($primary-color, .6), $white);
+    background-image: linear-gradient(to top, rgba($primary-color, .6), rgba($primary-color, .1));
     border-radius: 6px;
   }
 }
@@ -633,12 +633,50 @@ $alpha-album: .5;
   text-transform: uppercase;
   @extend .font-header;
   font-weight: 700;
+  font-size: rem-calc(13);
 
   &:hover, &:focus {
     color: $white;
   }
 
   &.megasena {
-    background-color: darken($success-color, 15%);
+    background-color: rgb(31,151,103);
+    //color: rgb(144,204,179);
   }
+
+  &.quina {
+    background-color: rgb(38,1,132);
+    //color: rgb(146,127,191);
+  }
+
+  &.lotofacil {
+    background-color: rgb(147,1,136);
+    //color: rgb(200,127,196);
+  }
+
+  &.lotomania {
+    background-color: rgb(245,126,10);
+  }
+}
+
+.accordion-content {
+  text-align: center;
+
+  span {
+    display: inline-block;
+    margin: rem-calc(0 6);
+    width: rem-calc(30);
+    height: rem-calc(30);
+    font-size: rem-calc(13);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid $medium-gray;
+    line-height: rem-calc(28);
+    font-weight: 700;
+  }
+}
+
+.lot-btn {
+
 }
