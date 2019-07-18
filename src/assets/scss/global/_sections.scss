@@ -149,12 +149,12 @@ $alpha-album: .5;
     }
 
     h2 {
-      font-size: rem-calc(20);
+      font-size: rem-calc(14);
       position: relative;
       left: rem-calc(-16);
       display: inline-block;
       margin: 0;
-      padding: rem-calc(10 12);
+      padding: rem-calc(10);
       background: rgba($alert-color, .7);
       font-weight: 400;
       //font-style: italic;
@@ -677,6 +677,65 @@ $alpha-album: .5;
   }
 }
 
-.lot-btn {
+#footer {
+  border-top: 2px solid $white;
+  background-color: rgba($light-gray, .3);
+  li {
+    border-bottom: 1px solid $medium-gray;
+    a {
+      font-size: rem-calc(12);
+      text-transform: uppercase;
+      color: $black;
+    }
 
+    &:last-child {
+      a {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.logo-footer {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+  }
+}
+
+.footer-contact {
+  p {
+    font-size: rem-calc(12);
+    //text-transform: uppercase;
+    margin-bottom: rem-calc(5);
+  }
+
+  a {
+    text-decoration: underline;
+    color: $black;
+  }
+}
+
+.title-small {
+  font-size: rem-calc(12);
+  text-transform: uppercase;
+}
+
+.keep-czn {
+  span:not(.title-small) {
+    font-size: rem-calc(32);
+    display: inline-block;
+    margin-left: rem-calc(10);
+  }
+  a {
+    color: $dark-gray;
+  }
 }
