@@ -9,5 +9,6 @@ import './lib/dataBg';
 import './lib/cycle';
 import './lib/cycle.swipe';
 import './lib/cycle-settings';
+import './lib/frameRadio';
 
 $(document).foundation();

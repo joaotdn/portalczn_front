@@ -89,7 +89,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 0;
+$global-radius: 4px;
 $global-menu-padding: 0.7rem rem-calc(10);
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -720,7 +720,7 @@ $prototype-text-overflow: ellipsis;
 // 46. Responsive Embed
 // --------------------
 
-$responsive-embed-margin-bottom: rem-calc(16);
+$responsive-embed-margin-bottom: 0;
 $responsive-embed-ratios: (
   default: 4 by 3,
   widescreen: 16 by 9,
@@ -729,14 +729,14 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $white;
+$reveal-background: $black;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
-$reveal-border: 1px solid $medium-gray;
+$reveal-border: none;
 $reveal-radius: $global-radius;
 $reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
+$reveal-overlay-background: rgba($black, 0.8);
 
 // 48. Slider
 // ----------
