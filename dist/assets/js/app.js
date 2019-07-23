@@ -14572,20 +14572,20 @@ foundation_sites_js_foundation_core__WEBPACK_IMPORTED_MODULE_1__["Foundation"].p
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
 
+var radioPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radio-player');
 
-
-(function ($) {
-  var radiosSelect = $('#radios-select');
-  var isActiveRadio = localStorage.getItem('activeRadio');
-
-  if (radiosSelect.length) {
-    radiosSelect.on('change', function () {
-      isActiveRadio = (_readOnlyError("isActiveRadio"),  true && localStorage.setItem('activeRadio', $(this).val()));
-    });
-  }
-})(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
+if (radioPlayer.length) {
+  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active');
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radios-select').change(function () {
+    localStorage.setItem('activeRadio', jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val());
+    !radioPlayer.hasClass('active') && radioPlayer.addClass('active');
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.close-radio').click(function () {
+    localStorage.setItem('activeRadio', null);
+    radioPlayer.removeClass('active');
+  });
+}
 
 /***/ }),
 

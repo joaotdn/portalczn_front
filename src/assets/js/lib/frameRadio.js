@@ -1,12 +1,17 @@
-import jQuery from 'jquery';
+import $ from 'jquery';
 
-(function($) {
-  const radiosSelect = $('#radios-select');
-  const isActiveRadio = localStorage.getItem('activeRadio');
+const radioPlayer = $('#radio-player');
+
+if (radioPlayer.length) {
+  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active');
+
+  $('#radios-select').change(function() {
+    localStorage.setItem('activeRadio', $(this).val());
+    !radioPlayer.hasClass('active') && radioPlayer.addClass('active');
+  });
   
-  if (radiosSelect.length) {
-    radiosSelect.on('change', function() {
-      isActiveRadio =! "" && localStorage.setItem('activeRadio', $(this).val());
-    });
-  }
-})(jQuery);
+  $('.close-radio').click(function() {
+    localStorage.setItem('activeRadio', null);
+    radioPlayer.removeClass('active');
+  });
+}
