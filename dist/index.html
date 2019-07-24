@@ -457,14 +457,11 @@
                             <div class="cell auto">
                                 <select name="radios" id="radios-select" class="font-header">
                                     <option>Selecionar rádio</option>
-                                    <option value="http://google.com/1">Tabajara FM</option>
-                                    <option value="http://google.com/2">Tabajara AM</option>
-                                    <option value="http://google.com/3">Patamuté FM</option>
-                                    <option value="http://google.com/4">Difusora Cajazeiras</option>
+                                    <option value="http://72.29.81.124:8118/;stream.mp3">Tabajara FM</option>
+                                    <option value="http://72.29.81.124:8226/;stream.mp3">Tabajara AM</option>
+                                    <option value="http://72.29.81.124:8118/;stream.mp3">Patamuté FM</option>
+                                    <option value="http://72.29.81.124:8118/;stream.mp3">Difusora Cajazeiras</option>
                                 </select>
-                            </div>
-                            <div class="cell shrink">
-                                <a href="#" class="play-radio"><i class="far fa-play-circle"></i></a>
                             </div>
                         </div>
                     </div>
@@ -736,8 +733,27 @@
         <li><a href="#" title=""><i class="fab fa-twitter"></i> Twitter</a></li>
         <li><a href="#" title=""><i class="fab fa-instagram"></i> Instagram</a></li>
     </ul>
-</div><div id="radio-player" class="width-100 position-fixed-bottom">
-  
+</div><div id="radio-player">
+  <div id='radio-bars'>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+    <div class='radio-bars'></div>
+  </div>
+  <span class="radio-name display-inline-block text-uppercase font-header"></span>
+
+  <button class="close-button close-radio" aria-label="Close radio" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <audio id="radio-audio">
+    <p>Seu navegador não possui suporte para essa funcionalidade. Atualize-o!</p>
+  </audio>
 </div><footer id="footer" class="container margin-top-2">
     <div class="grid-container padding-top-2 padding-bottom-2">
         <div class="grid-x grid-padding-x">

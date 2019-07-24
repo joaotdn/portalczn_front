@@ -14574,16 +14574,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 var radioPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radio-player');
+var RADIO_DELAY = 1200;
+
+var playRadio = function playRadio(url) {
+  var player = document.getElementById('radio-audio');
+  setTimeout(function () {
+    player.setAttribute('src', url);
+    player.play();
+  }, RADIO_DELAY);
+};
+
+var setRadioName = function setRadioName() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text('Aguarde...');
+  var obj = JSON.parse(localStorage.getItem('activeRadio'));
+
+  if (obj) {
+    setTimeout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text(obj.name);
+    }, RADIO_DELAY);
+    playRadio(obj.url);
+  }
+};
 
 if (radioPlayer.length) {
-  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active');
+  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radios-select').change(function () {
-    localStorage.setItem('activeRadio', jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val());
+    var obj = {
+      url: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(),
+      name: jquery__WEBPACK_IMPORTED_MODULE_0___default()('option:selected', this).text()
+    };
+    localStorage.setItem('activeRadio', JSON.stringify(obj));
     !radioPlayer.hasClass('active') && radioPlayer.addClass('active');
+    setRadioName();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.close-radio').click(function () {
-    localStorage.setItem('activeRadio', null);
+    localStorage.removeItem('activeRadio');
     radioPlayer.removeClass('active');
+    document.getElementById('radio-audio').pause();
   });
 }
 

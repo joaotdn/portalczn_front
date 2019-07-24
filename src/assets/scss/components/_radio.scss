@@ -1,0 +1,91 @@
+#radio-player {
+  background-image: linear-gradient(to top, $primary-color, darken($primary-color, 5%));
+  transition: all .3s linear;
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 991;
+  height: rem-calc(30);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  @include breakpoint(medium up) {
+    width: rem-calc(230);
+    right: rem-calc(16);
+  }
+
+  &.active {
+    transform: translateY(0);
+    opacity: .8;
+  }
+
+  .close-button {
+    color: $white;
+    opacity: 0.7;
+    top: rem-calc(3);
+    right: rem-calc(10);
+    font-size: rem-calc(26);
+  }
+
+  // i {
+  //   margin-right: rem-calc(6);
+  //   animation: pulse 1s linear infinite alternate;
+  //   color: darken($primary-color, 30%);
+  // }
+}
+
+#radio-bars {
+  height: rem-calc(20);
+  left: rem-calc(10);
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+}
+
+.radio-bars {
+ background: $white;
+  bottom: 1px;
+  height: 3px;
+  position: absolute;
+  width: 3px;      
+  animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+  0% {
+     opacity: .35;
+      height: 3px; 
+  }
+  100% {
+      opacity: 1;       
+      height: 20px;        
+  }
+}
+
+// @keyframes pulse {
+//   0% {
+//      opacity: .35; 
+//   }
+//   100% {
+//       opacity: 1;               
+//   }
+// }
+
+.radio-name {
+  font-size: rem-calc(10);
+  color: $white;
+  margin-left: rem-calc(60);
+  padding-top: 10px;
+}
+
+.radio-bars:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+.radio-bars:nth-child(2)  { left: 5px; animation-duration: 433ms; }
+.radio-bars:nth-child(3)  { left: 9px; animation-duration: 407ms; }
+.radio-bars:nth-child(4)  { left: 13px; animation-duration: 458ms; }
+.radio-bars:nth-child(5)  { left: 17px; animation-duration: 400ms; }
+.radio-bars:nth-child(6)  { left: 21px; animation-duration: 427ms; }
+.radio-bars:nth-child(7)  { left: 25px; animation-duration: 441ms; }
+.radio-bars:nth-child(8)  { left: 29px; animation-duration: 419ms; }
+.radio-bars:nth-child(9)  { left: 33px; animation-duration: 487ms; }
+// .radio-bars:nth-child(10) { left: 37px; animation-duration: 442ms; }​
