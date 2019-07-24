@@ -5,6 +5,7 @@ window.jQuery = $;
 
 import './lib/foundation-explicit-pieces';
 import './lib/offcanvas';
+import './lib/menuScroll';
 import './lib/dataBg';
 import './lib/cycle';
 import './lib/cycle.swipe';

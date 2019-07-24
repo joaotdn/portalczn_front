@@ -1,0 +1,60 @@
+#menu-scroll {
+  padding: rem-calc(10 0);
+  background-color: $white;
+  z-index: 998;
+  transition: all .2s linear;
+  transform: translateY(-100%);
+  opacity: 0;
+  border-bottom: 1px solid $light-gray;
+
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  h2 {
+    font-size: rem-calc(14);
+    a {
+      color: $alert-color;
+      > span {
+        color: $primary-color;
+      }
+    }
+  }
+
+  li {
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+    a {
+      text-transform: uppercase;
+      font-size: rem-calc(12);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+#form-search-scroll {
+  max-width: rem-calc(300);
+  float: right;
+
+  .input-group-label {
+    background-color: transparent;
+    border: none;
+    color: $primary-color;
+    cursor: pointer;
+  }
+
+  input {
+    font-size: 14px;
+    background-color: transparent;
+    @extend .font-header;
+    padding: 0 10px;
+    border: none;
+    box-shadow: none;
+    height: auto;
+  }
+}

@@ -13569,14 +13569,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var what_input__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(what_input__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _lib_foundation_explicit_pieces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/foundation-explicit-pieces */ "./src/assets/js/lib/foundation-explicit-pieces.js");
 /* harmony import */ var _lib_offcanvas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/offcanvas */ "./src/assets/js/lib/offcanvas.js");
-/* harmony import */ var _lib_dataBg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/dataBg */ "./src/assets/js/lib/dataBg.js");
-/* harmony import */ var _lib_cycle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/cycle */ "./src/assets/js/lib/cycle.js");
-/* harmony import */ var _lib_cycle_swipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/cycle.swipe */ "./src/assets/js/lib/cycle.swipe.js");
-/* harmony import */ var _lib_cycle_settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/cycle-settings */ "./src/assets/js/lib/cycle-settings.js");
-/* harmony import */ var _lib_frameRadio__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/frameRadio */ "./src/assets/js/lib/frameRadio.js");
+/* harmony import */ var _lib_menuScroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/menuScroll */ "./src/assets/js/lib/menuScroll.js");
+/* harmony import */ var _lib_dataBg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/dataBg */ "./src/assets/js/lib/dataBg.js");
+/* harmony import */ var _lib_cycle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./lib/cycle */ "./src/assets/js/lib/cycle.js");
+/* harmony import */ var _lib_cycle_swipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lib/cycle.swipe */ "./src/assets/js/lib/cycle.swipe.js");
+/* harmony import */ var _lib_cycle_settings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lib/cycle-settings */ "./src/assets/js/lib/cycle-settings.js");
+/* harmony import */ var _lib_frameRadio__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lib/frameRadio */ "./src/assets/js/lib/frameRadio.js");
 
 
 window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+
 
 
 
@@ -14616,6 +14618,35 @@ if (radioPlayer.length) {
 
 /***/ }),
 
+/***/ "./src/assets/js/lib/menuScroll.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/lib/menuScroll.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+var lastScrollTop = 0;
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function (event) {
+  var st = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop();
+
+  if (st > lastScrollTop) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-scroll').removeClass('active');
+  } else if (st <= 200) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-scroll').removeClass('active');
+  } else {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-scroll').addClass('active');
+  }
+
+  lastScrollTop = st;
+});
+
+/***/ }),
+
 /***/ "./src/assets/js/lib/offcanvas.js":
 /*!****************************************!*\
   !*** ./src/assets/js/lib/offcanvas.js ***!
@@ -14630,7 +14661,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var offcanvas = function offcanvas() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-mobile-menu]').on('click', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('[data-mobile-menu]').on('click', function (e) {
+    e.preventDefault();
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('#menu-offcanvas, .offcanvas-layer').toggleClass('active');
   });
 };
