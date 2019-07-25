@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 const radioPlayer = $('#radio-player');
-const RADIO_DELAY = 1500;
+const RADIO_DELAY = 1200;
 
 const playRadio = function(url) {
   let player = document.getElementById('radio-audio');
@@ -9,21 +9,21 @@ const playRadio = function(url) {
   player.play();
 };
 
-const setRadioName = function() {
-  $('.radio-name').text('Aguarde...');
-  let obj = JSON.parse(localStorage.getItem('activeRadio'));
-  if (obj) {
-    setTimeout(function() {
-      $('.radio-name').text(obj.name);
-      playRadio(obj.url);
-    }, RADIO_DELAY);
-  }
+const setRadio = function() {
+  return new Promise(resolve => {
+    $('.radio-name').text('Aguarde...');
+    let obj = JSON.parse(localStorage.getItem('activeRadio'));
+    if (obj) {
+      setTimeout(function() {
+        $('.radio-name').text(obj.name);
+        playRadio(obj.url);
+      }, RADIO_DELAY);
+    }
+  });
 };
 
 if (radioPlayer.length) {
-  setTimeout(function() {
-    !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
-  }, RADIO_DELAY * 2);
+  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadio();
 
   $('#radios-select').change(function() {
     let obj = {
@@ -32,7 +32,7 @@ if (radioPlayer.length) {
     };
     localStorage.setItem('activeRadio', JSON.stringify(obj));
     !radioPlayer.hasClass('active') && radioPlayer.addClass('active');
-    setRadioName();
+    setRadio();
   });
   
   $('.close-radio').click(function() {

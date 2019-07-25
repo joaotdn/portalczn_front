@@ -14576,7 +14576,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 var radioPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radio-player');
-var RADIO_DELAY = 1500;
+var RADIO_DELAY = 1200;
 
 var playRadio = function playRadio(url) {
   var player = document.getElementById('radio-audio');
@@ -14584,22 +14584,22 @@ var playRadio = function playRadio(url) {
   player.play();
 };
 
-var setRadioName = function setRadioName() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text('Aguarde...');
-  var obj = JSON.parse(localStorage.getItem('activeRadio'));
+var setRadio = function setRadio() {
+  return new Promise(function (resolve) {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text('Aguarde...');
+    var obj = JSON.parse(localStorage.getItem('activeRadio'));
 
-  if (obj) {
-    setTimeout(function () {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text(obj.name);
-      playRadio(obj.url);
-    }, RADIO_DELAY);
-  }
+    if (obj) {
+      setTimeout(function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text(obj.name);
+        playRadio(obj.url);
+      }, RADIO_DELAY);
+    }
+  });
 };
 
 if (radioPlayer.length) {
-  setTimeout(function () {
-    !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
-  }, RADIO_DELAY * 2);
+  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadio();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radios-select').change(function () {
     var obj = {
       url: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(),
@@ -14607,7 +14607,7 @@ if (radioPlayer.length) {
     };
     localStorage.setItem('activeRadio', JSON.stringify(obj));
     !radioPlayer.hasClass('active') && radioPlayer.addClass('active');
-    setRadioName();
+    setRadio();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.close-radio').click(function () {
     localStorage.removeItem('activeRadio');
