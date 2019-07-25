@@ -1,14 +1,12 @@
 import $ from 'jquery';
 
 const radioPlayer = $('#radio-player');
-const RADIO_DELAY = 1200;
+const RADIO_DELAY = 1500;
 
 const playRadio = function(url) {
   let player = document.getElementById('radio-audio');
-  setTimeout(function() {
-    player.setAttribute('src', url);
-    player.play();
-  }, RADIO_DELAY);
+  player.setAttribute('src', url);
+  player.play();
 };
 
 const setRadioName = function() {
@@ -17,13 +15,15 @@ const setRadioName = function() {
   if (obj) {
     setTimeout(function() {
       $('.radio-name').text(obj.name);
+      playRadio(obj.url);
     }, RADIO_DELAY);
-    playRadio(obj.url);
   }
 };
 
 if (radioPlayer.length) {
-  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
+  setTimeout(function() {
+    !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
+  }, RADIO_DELAY * 2);
 
   $('#radios-select').change(function() {
     let obj = {

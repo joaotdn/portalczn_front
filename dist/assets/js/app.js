@@ -14576,14 +14576,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 var radioPlayer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radio-player');
-var RADIO_DELAY = 1200;
+var RADIO_DELAY = 1500;
 
 var playRadio = function playRadio(url) {
   var player = document.getElementById('radio-audio');
-  setTimeout(function () {
-    player.setAttribute('src', url);
-    player.play();
-  }, RADIO_DELAY);
+  player.setAttribute('src', url);
+  player.play();
 };
 
 var setRadioName = function setRadioName() {
@@ -14593,13 +14591,15 @@ var setRadioName = function setRadioName() {
   if (obj) {
     setTimeout(function () {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.radio-name').text(obj.name);
+      playRadio(obj.url);
     }, RADIO_DELAY);
-    playRadio(obj.url);
   }
 };
 
 if (radioPlayer.length) {
-  !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
+  setTimeout(function () {
+    !!localStorage.getItem('activeRadio') && radioPlayer.addClass('active') && setRadioName();
+  }, RADIO_DELAY * 2);
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('#radios-select').change(function () {
     var obj = {
       url: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val(),
