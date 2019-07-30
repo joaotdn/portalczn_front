@@ -739,3 +739,11 @@ $alpha-album: .5;
     color: $dark-gray;
   }
 }
+
+.widget-agenda {
+  h4 {
+    font-size: rem-calc(18);
+    text-transform: uppercase;
+    
+  }
+}
