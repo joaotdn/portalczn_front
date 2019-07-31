@@ -545,11 +545,12 @@ $alpha-album: .5;
     margin-top: rem-calc(16);
   }
   header {
-    color: $alert-color;
-    margin-bottom: rem-calc(24);
+    color: #d45610;
+    margin-bottom: rem-calc(16);
     padding-bottom: rem-calc(16);
-    border-bottom: 2px solid $alert-color;
-    font-size: rem-calc(18);
+    border-bottom: 1px solid rgba(#d45610, .2);
+    font-size: rem-calc(16);
+    text-align: center;
   }
 }
 
@@ -742,8 +743,103 @@ $alpha-album: .5;
 
 .widget-agenda {
   h4 {
-    font-size: rem-calc(18);
+    font-size: rem-calc(16);
+    font-weight: 400;
+    // border-radius: $global-radius;
+    // text-transform: uppercase;
+    width: 100%;
+    line-height: 1;
+    padding: 0;
+    // background-color: rgba($color: $primary-color, $alpha: 0.1);
+    // border-bottom: none;
+  
+    > a {
+      color: $primary-color;
+      display: block;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        @include vertical-center;
+        right: 0;
+        width: 50%;
+        height: 10px;
+        background-color: rgba($primary-color, 0.1);
+      }
+
+      &:hover {
+        color: lighten($color: $primary-color, $amount: 30%);
+      }
+
+      i {
+        font-size: rem-calc(22);
+        margin-right: rem-calc(8);
+        color: lighten($color: $primary-color, $amount: 30%);
+      }
+    }
+  }
+  span {
+    display: inline-block;
+    vertical-align: sub;
+  }
+
+  .accordion {
+    border-radius: $global-radius;
+  }
+  .accordion-item {
+    background-color: lighten($color: $primary-color, $amount: 30%);
+    transition: background-color .2s linear;
+
+    &.is-active, &:hover {
+      background-color: $primary-color;
+      .accordion-title {
+        color: lighten($color: $primary-color, $amount: 30%);
+      }
+    }
+    i {
+      display: inline-block;
+      opacity: 0.5;
+    }
+  }
+  .accordion-title {
+    font-weight: 400;
+    font-size: rem-calc(12);
+  }
+  .accordion-content {
+    background-color: $primary-color;
+    height: rem-calc(176);
+    padding-top: 0;
+  }
+
+  .button, .accordion-item {
+    i {
+      margin-right: rem-calc(8);
+    }
+  }
+}
+
+.poster-calendar {
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: inset 0px 60px 40px 0px $primary-color;
+  -moz-box-shadow: inset 0px 60px 40px 0px $primary-color;
+  box-shadow: inset 0px 60px 40px 0px $primary-color;
+  opacity: .4;
+  z-index: 0;
+}
+
+.calendar-info {
+  h3 {
+    font-size: rem-calc(20);
+  }
+  a {
+    color: $white;
+  }
+  p {
+    margin-bottom: rem-calc(5);
+    font-size: rem-calc(10);
+    color: rgba($color: $white, $alpha: 0.9);
     text-transform: uppercase;
-    
   }
 }
