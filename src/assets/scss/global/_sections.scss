@@ -116,8 +116,8 @@ $alpha-album: .5;
     padding: rem-calc(16);
     background-color: $white;
     //max-width: rem-calc(300);
-    border-radius: 6px;
-    border: 2px solid $light-gray;
+    //border-radius: 6px;
+    border: 1px solid $light-gray;
   }
 
   .red {
@@ -131,6 +131,10 @@ $alpha-album: .5;
 
 .videos-container {
   background-color: $videos-bgcolor;
+
+  @include breakpoint(medium up) {
+    padding-right: rem-calc(32);
+  }
 
   header {
     text-transform: uppercase;
