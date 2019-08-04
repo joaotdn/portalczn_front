@@ -1,0 +1,84 @@
+.header-single {
+  border-bottom: 2px solid $light-gray;
+
+  > .grid-container > .align-middle {
+    height: rem-calc(60);
+  }
+
+  h2 {
+    font-size: rem-calc(24);
+    line-height: 1;
+    a {
+      color: darken($primary-color, 15%);
+    }
+    i {
+      color: rgba($dark-gray,.2);
+    }
+  }
+
+  a:hover {
+    color: $primary-color;
+  }
+}
+
+.share-post {
+  @include breakpoint(medium up) {
+    a {
+      width: rem-calc(50);
+      height: rem-calc(50);
+      line-height: rem-calc(50);
+    }
+  }
+
+  a {
+    text-align: center;
+    display: inline-block;
+    width: rem-calc(40);
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    border: 1px solid $light-gray;
+    border-bottom: none;
+    padding: 0;
+    font-size: rem-calc(20);
+
+    &:hover {
+      color: $alert-color;
+    }
+  }
+
+  li {
+    line-height: 1;
+    &:last-child {
+      a {
+        border-bottom: 1px solid $light-gray;
+      }
+    }
+  }
+}
+
+.post-excerpt {
+  color: $dark-gray;
+  font-size: rem-calc(14);
+  font-style: italic;
+}
+
+.post-sidebar {
+  height: rem-calc(500);
+  background-color: #c6c6c6;
+}
+
+.post-content {
+  @include breakpoint(small only) {
+    p {
+      font-size: rem-calc(14);
+    }
+  }
+}
+
+.post-author {
+  font-size: rem-calc(14);
+  p:last-child {
+    font-size: rem-calc(12);
+    color: $dark-gray;
+  }
+}
