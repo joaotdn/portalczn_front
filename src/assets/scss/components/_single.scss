@@ -8,11 +8,13 @@
   h2 {
     font-size: rem-calc(24);
     line-height: 1;
+
     a {
       color: darken($primary-color, 15%);
     }
+
     i {
-      color: rgba($dark-gray,.2);
+      color: rgba($dark-gray, .2);
     }
   }
 
@@ -50,6 +52,7 @@
 
   li {
     line-height: 1;
+
     &:last-child {
       a {
         border-bottom: 1px solid $light-gray;
@@ -71,12 +74,15 @@
   h2 {
     font-size: rem-calc(16);
   }
+
   a {
     color: $black;
+
     &:hover {
       color: $primary-color;
     }
   }
+
   span {
     font-weight: 700;
     text-transform: uppercase;
@@ -86,6 +92,7 @@
     //margin-bottom: rem-calc(10);
     transform: translateY(2px);
   }
+
   img {
     transition: all .2s;
     filter: grayscale(35%);
@@ -108,12 +115,15 @@
 
 .post-author {
   font-size: rem-calc(14);
+
   span:last-child {
     font-size: rem-calc(12);
     color: $dark-gray;
   }
+
   a.display-inline-block {
     color: $black;
+
     &:first-child {
       margin-right: rem-calc(8);
     }
@@ -143,7 +153,7 @@
   }
 }
 
-.post-related {
+.post-related, .last-news-cat {
   h4 {
     @extend .margin-0;
     @extend .width-100;
@@ -157,25 +167,117 @@
 
 .post-tags {
   font-size: rem-calc(14);
+
   header {
     font-weight: 800;
     margin-bottom: rem-calc(10);
   }
+
   li {
     @extend .margin-right-1;
   }
+
   i {
     color: lighten($primary-color, 15%);
   }
 }
 
 .post-video {
-  background: rgba(0,0,0,1);
-  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(79,79,79,1)));
-  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
-  background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
-  background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
-  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(79,79,79,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4f4f4f', GradientType=0 );
+  background: rgba(0, 0, 0, 1);
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(79, 79, 79, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(79, 79, 79, 1)));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(79, 79, 79, 1) 100%);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(79, 79, 79, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(79, 79, 79, 1) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(79, 79, 79, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#4f4f4f', GradientType=0);
+}
+
+.big-thumb {
+  height: rem-calc(250);
+  @extend .margin-bottom-1;
+  //position: relative;
+
+  a {
+    color: $white;
+    top: 0;
+    left: 0;
+    background-color: rgba($black, .4);
+    transition: background-color .2s;
+
+    &:hover {
+      background-color: rgba($black, .2);
+    }
+  }
+}
+
+.big-thumb-link {
+  bottom: rem-calc(0);
+  padding: rem-calc(16);
+}
+
+.tag-thumb {
+  font-size: rem-calc(10);
+  padding: rem-calc(3 6);
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: $primary-color;
+  margin-bottom: rem-calc(10);
+}
+
+.title-thumb {
+  font-size: rem-calc(18);
+  @extend .font-header;
+  font-weight: 700;
+}
+
+.list-cat-tags {
+  border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+
+  a, strong {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+  }
+
+  strong {
+    line-height: rem-calc(34.38);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  i {
+    color: $medium-gray;
+  }
+}
+
+.news-cat-item {
+  @extend .margin-bottom-2;
+
+  &:hover {
+    img {
+      filter: grayscale(0);
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(18);
+  }
+
+  img {
+    width: rem-calc(200);
+    filter: grayscale(50%);
+    transition: all .3s;
+  }
+
+  @include breakpoint(small only) {
+    img {
+      width: rem-calc(120);
+    }
+    h2 {
+      font-size: rem-calc(14);
+    }
+  }
 }
