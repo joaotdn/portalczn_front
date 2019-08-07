@@ -1,0 +1,26 @@
+<div id="menu-scroll" class="container position-fixed-top">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-middle">
+      <div class="cell auto">
+        <h2 class="margin-0">
+            <a href="#" class="open-menu-scroll" data-mobile-menu>
+                <span><i class="fas fa-bars"></i> MENU</span>
+            </a>
+        </h2>
+      </div>
+        <div class="cell auto small-8 hide-for-medium">
+            <ul class="menu align-right">
+                {{> list.post.tools}}
+            </ul>
+        </div>
+        <div class="cell auto small-8 show-for-medium">
+            <form action="" id="form-search-single">
+                <div class="input-group margin-0 font-header">
+                    <label for="search-input-scroll" class="input-group-label padding-left-0"><i class="fas fa-search"></i></label>
+                    <input type="search" id="search-input-scroll" class="input-group-field" placeholder="Pesquisar...">
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>

@@ -22,7 +22,9 @@
 }
 
 .share-post {
+  display: none;
   @include breakpoint(medium up) {
+    display: initial;
     a {
       width: rem-calc(50);
       height: rem-calc(50);
@@ -63,8 +65,37 @@
 }
 
 .post-sidebar {
-  height: rem-calc(500);
-  background-color: #c6c6c6;
+}
+
+.post-features {
+  h2 {
+    font-size: rem-calc(16);
+  }
+  a {
+    color: $black;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  span {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $primary-color;
+    line-height: 1;
+    font-size: rem-calc(11);
+    //margin-bottom: rem-calc(10);
+    transform: translateY(2px);
+  }
+  img {
+    transition: all .2s;
+    filter: grayscale(35%);
+  }
+}
+
+.media-object:hover {
+  img {
+    filter: grayscale(0);
+  }
 }
 
 .post-content {
@@ -77,8 +108,66 @@
 
 .post-author {
   font-size: rem-calc(14);
-  p:last-child {
+  span:last-child {
     font-size: rem-calc(12);
     color: $dark-gray;
+  }
+  a.display-inline-block {
+    color: $black;
+    &:first-child {
+      margin-right: rem-calc(8);
+    }
+  }
+}
+
+.czn-widget {
+  @extend .margin-bottom-1;
+
+  h4 {
+    width: 100%;
+    font-size: rem-calc(13);
+    color: $white;
+    background-color: $primary-color;
+    line-height: rem-calc(35);
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: rem-calc(0 16);
+    height: rem-calc(35);
+  }
+
+  header {
+    a {
+      color: $white;
+    }
+  }
+}
+
+.post-related {
+  h4 {
+    @extend .margin-0;
+    @extend .width-100;
+    padding-bottom: rem-calc(10);
+    display: inline-block;
+    color: $primary-color;
+    font-size: rem-calc(18);
+    border-bottom: 2px solid rgba($primary-color, .2);
+  }
+}
+
+.post-tags {
+  font-size: rem-calc(14);
+  header {
+    font-weight: 800;
+    margin-bottom: rem-calc(10);
+  }
+  li {
+    @extend .margin-right-1;
+  }
+  a {
+    @extend .button;
+  }
+  i {
+    color: lighten($primary-color, 15%);
   }
 }
