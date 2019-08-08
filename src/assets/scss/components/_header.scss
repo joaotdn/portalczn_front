@@ -8,6 +8,11 @@ $lighten-header: lighten($light-gray, 5%);
   color: $white;
   font-size: rem-calc(10);
   border-bottom: 1px solid $white;
+
+  &.topbar-videos {
+    border: none;
+    background-color: #333;
+  }
 }
 
 #header {

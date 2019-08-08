@@ -281,3 +281,38 @@
     }
   }
 }
+
+.header-video {
+  background-color: #222;
+  border: none;
+  a, label, input {
+    color: $white !important;
+  }
+
+  i.fa-play {
+    color: $alert-color;
+  }
+}
+
+.video-player-list {
+  background-color: $black;
+  @extend .padding-top-1;
+  @extend .padding-bottom-1;
+}
+
+.video-options {
+  @extend .position-absolute;
+  right: 1rem;
+  top: 0;
+
+  a {
+    @extend .display-inline-block;
+    width: rem-calc(40);
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    background-color: #333;
+    color: $white;
+    text-align: center;
+    border-radius: $global-radius;
+  }
+}
