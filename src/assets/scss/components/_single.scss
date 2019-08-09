@@ -285,6 +285,7 @@
 .header-video {
   background-color: #222;
   border: none;
+
   a, label, input {
     color: $white !important;
   }
@@ -296,8 +297,8 @@
 
 .video-player-list {
   background-color: $black;
-  @extend .padding-top-1;
-  @extend .padding-bottom-1;
+  @extend .padding-top-2;
+  @extend .padding-bottom-2;
 }
 
 .video-options {
@@ -314,5 +315,238 @@
     color: $white;
     text-align: center;
     border-radius: $global-radius;
+  }
+}
+
+.video-player-header {
+  @include breakpoint(large up) {
+    h2 {
+      font-size: rem-calc(36);
+    }
+  }
+  @include breakpoint(medium only) {
+    h2 {
+      font-size: rem-calc(18);
+    }
+  }
+
+  a {
+    color: $white;
+  }
+
+  p {
+    color: $medium-gray;
+    font-size: rem-calc(14);
+  }
+}
+
+.video-tag {
+  color: $alert-color;
+  @extend .text-uppercase;
+  margin-bottom: 1rem;
+}
+
+.video-feature {
+  height: rem-calc(200);
+  @extend .margin-bottom-1;
+
+  figure {
+    @extend .height-100;
+    background-color: $black;
+    overflow: hidden;
+
+    > a {
+      @extend .position-absolute;
+      @extend .width-100;
+      @extend .height-100;
+      @extend .display-block;
+      z-index: 0;
+      opacity: .6;
+    }
+
+    &:hover {
+      > a {
+        opacity: .4;
+      }
+    }
+  }
+
+  figcaption {
+    @include vertical-center;
+    left: 0;
+    padding: 1rem;
+    z-index: 10;
+
+    a {
+      color: $white;
+    }
+    i {
+      color: $alert-color;
+    }
+  }
+
+  .media-object {
+    margin-bottom: 0;
+  }
+}
+
+.v-feature-tag {
+  color: $alert-color;
+  font-size: rem-calc(10);
+  @extend .text-uppercase;
+  @extend .font-header;
+  font-weight: 700;
+  margin-bottom: rem-calc(10);
+}
+
+.v-feature-title {
+  font-weight: 700;
+  font-size: rem-calc(20);
+  @extend .font-header;
+  @include breakpoint(medium only) {
+    font-size: rem-calc(14);
+  }
+}
+
+.list-videos {
+  @include  breakpoint(medium up) {
+    header {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: calc(100% + 200px);
+        height: 100%;
+        left: -100%;
+        top: 0;
+        background-color: $alert-color;
+        z-index: 0;
+      }
+    }
+  }
+
+  .cell {
+    @extend .margin-bottom-2;
+  }
+
+  h4 {
+    @extend .display-inline-block;
+    @extend .width-100;
+    @extend .margin-bottom-1;
+    font-size: rem-calc(20);
+    text-transform: uppercase;
+    color: $alert-color;
+
+    i {
+      opacity: .5;
+    }
+  }
+
+  figure {
+    &:hover {
+      figcaption {
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+    > a {
+      @extend .display-block;
+      @extend .position-relative;
+      background-color: $black;
+      color: $white;
+
+      &:hover {
+        img {
+          opacity: .8;
+        }
+        span {
+          opacity: 1;
+        }
+      }
+
+      span, img {
+        transition: opacity .3s;
+      }
+
+      img {
+        opacity: .6;
+        @extend .width-100;
+      }
+
+      span {
+        @include vertical-center;
+        left: 0;
+        @extend .width-100;
+        @extend .text-center;
+        font-size: rem-calc(36);
+        z-index: 9;
+        opacity: .8;
+      }
+
+      p {
+        @extend .position-absolute;
+        @extend .margin-0;
+        @extend .display-block;
+        @extend .text-uppercase;
+        @extend .font-header;
+        bottom: 0;
+        left: 0;
+        font-size: rem-calc(10);
+        background-color: $alert-color;
+        z-index: 9;
+        padding: rem-calc(3 5);
+      }
+    }
+
+    figcaption {
+      @extend .padding-top-1;
+      a {
+        color: $black;
+        @extend .font-header;
+        font-weight: 700;
+        font-size: rem-calc(18);
+      }
+    }
+  }
+
+  header {
+    background-color: $alert-color;
+    @extend .position-relative;
+  }
+
+  input {
+    @extend .font-header;
+    @extend .position-relative;
+    z-index: 1;
+    font-size: rem-calc(14);
+    background-color: darken($alert-color, 10%);
+    color: $white;
+    border: none;
+    &:focus {
+      background-color: darken($alert-color, 10%);
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
+
+.video-aside-header {
+  color: $alert-color;
+  @extend .font-header;
+  @extend .text-uppercase;
+  @extend .margin-bottom-1;
+  @extend .position-relative;
+  font-size: rem-calc(14);
+  font-weight: 700;
+
+  &::before {
+    content: '';
+    @extend .display-block;
+    @include vertical-center;
+    right: 0;
+    width: 50%;
+    height: 10px;
+    background-color: rgba($alert-color, .1);
   }
 }

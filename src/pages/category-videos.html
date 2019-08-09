@@ -4,22 +4,29 @@ title: Página de vídeos
 ---
 <div class="container video-player-list">
     <div class="grid-container">
-        <div class="grid-x grid-padding-x align-center position-relative">
-            <div class="small-12 medium-9 cell">
+        <div class="grid-x grid-padding-x">
+            <div class="small-12 medium-5 cell">
+                <header class="video-player-header">
+                    <span class="video-tag display-block">
+                        <strong><small>Lula Presidente</small></strong>
+                    </span>
+                    <h2><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci, amet aspernatur.</a></h2>
+                    <div class="video-excerpt show-for-medium">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad autem culpa delectus distinctio doloribus ex excepturi facilis fuga, incidunt inventore ipsum laboriosam molestias odit recusandae temporibus veritatis vero, voluptatem.</p>
+                    </div>
+                    <p>
+                        <a href="#" class="button alert hollow small" title="">
+                            Continuar lendo <i class="fas fa-angle-right"></i>
+                        </a>
+                    </p>
+                </header>
+            </div>
+            <div class="small-12 medium-7 cell">
                 <div class="responsive-embed">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/xZvf6gUWu_M" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
-                <header>
-                    <h2></h2>
-                </header>
-            </div>
-
-            <div class="video-options">
-                <a href="#" title="" data-video-light>
-                    <i class="fas fa-lightbulb"></i>
-                </a>
             </div>
         </div>
     </div>
@@ -28,7 +35,40 @@ title: Página de vídeos
 <div class="container videos-content">
     <div class="grid-container">
         <div class="grid-padding-x grid-x">
-            <div class="small-12 medium-8 cell"></div>
+            <div class="small-12 medium-9 cell">
+                <div class="grid-container full">
+                    <div class="grid-x grid-padding-x">
+                        {{> videos.archive}}
+                    </div>
+                </div>
+            </div>
+
+            <aside class="small-12 medium-3 cell margin-top-2">
+                <figure class="margin-bottom-2 text-center">
+                    <a href="#"><img src="{{root}}assets/img/temp/vpub.jpg" alt=""></a>
+                </figure>
+
+                <div class="video-feature">
+                    <header class="video-aside-header">
+                        <span><i class="fas fa-plus"></i> visto do dia</span>
+                    </header>
+                    <figure class="position-relative width-100">
+                        <a href="#" title="" data-bg="{{root}}assets/img/temp/album2.jpg"></a>
+                        <figcaption>
+                            <span class="v-feature-title">
+                                <a href="#" title="" class="media-object">
+                                    <span class="media-object-section">
+                                        <i class="fas fa-play"></i>
+                                    </span>
+                                    <span class="media-object-section">
+                                        Workout Routine for Big Forearms and a Crushing Grip
+                                    </span>
+                                </a>
+                            </span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </aside>
         </div>
     </div>
 </div>
