@@ -12,5 +12,6 @@ import './lib/cycle.swipe';
 import './lib/cycle-settings';
 import './lib/frameRadio';
 import './lib/fontSize';
+import './lib/videoOptions';
 
 $(document).foundation();

@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal CZN - {{title}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0"></script>
+
+{{> menu.scroll.post}}
+{{> menu.offcanvas}}
+{{> header.topbar.videos}}
+{{> header.videos}}
+{{> body}}
+{{> dropdown.share.headline}}
+{{> radio.player}}
+{{> footer}}
+
+<div class="video-options-mask"></div>
+<script src="https://kit.fontawesome.com/5ef691494b.js"></script>
+<script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>
