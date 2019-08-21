@@ -40,7 +40,7 @@ $lighten-header: lighten($light-gray, 5%);
 .site-brand {
   @include breakpoint(small only) {
     img {
-      width: rem-calc(140);
+      width: rem-calc(160);
     }
   }
 }
@@ -148,5 +148,13 @@ a.tv-link {
 
   i {
     color: $primary-color;
+  }
+}
+
+.logo {
+  @include breakpoint(small only) {
+    img {
+      width: rem-calc(100);
+    }
   }
 }

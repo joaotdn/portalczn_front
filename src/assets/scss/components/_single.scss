@@ -1,12 +1,18 @@
 .header-single {
   border-bottom: 2px solid $light-gray;
 
+  @include breakpoint(medium up) {
+    h2 {
+      font-size: rem-calc(24) !important;
+    }
+  }
+
   > .grid-container > .align-middle {
     height: rem-calc(60);
   }
 
   h2 {
-    font-size: rem-calc(24);
+    font-size: rem-calc(20);
     line-height: 1;
 
     a {
