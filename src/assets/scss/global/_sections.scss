@@ -47,7 +47,7 @@ $alpha-album: .5;
   opacity: .7;
 
   li {
-    font-size: rem-calc(12);
+    font-size: rem-calc(11);
     text-transform: uppercase;
     position: relative;
 
@@ -548,6 +548,7 @@ $alpha-album: .5;
   @include breakpoint(small only) {
     margin-top: rem-calc(16);
   }
+
   header {
     color: #d45610;
     margin-bottom: rem-calc(16);
@@ -566,7 +567,7 @@ $alpha-album: .5;
     padding-right: rem-calc(16);
 
     &:hover {
-      figure  {
+      figure {
         -webkit-transform: scale(1.05);
         -moz-transform: scale(1.05);
         -ms-transform: scale(1.05);
@@ -645,22 +646,22 @@ $alpha-album: .5;
   }
 
   &.megasena {
-    background-color: rgb(31,151,103);
+    background-color: rgb(31, 151, 103);
     //color: rgb(144,204,179);
   }
 
   &.quina {
-    background-color: rgb(38,1,132);
+    background-color: rgb(38, 1, 132);
     //color: rgb(146,127,191);
   }
 
   &.lotofacil {
-    background-color: rgb(147,1,136);
+    background-color: rgb(147, 1, 136);
     //color: rgb(200,127,196);
   }
 
   &.lotomania {
-    background-color: rgb(245,126,10);
+    background-color: rgb(245, 126, 10);
   }
 }
 
@@ -685,8 +686,10 @@ $alpha-album: .5;
 #footer {
   border-top: 2px solid $white;
   background-color: rgba($light-gray, .3);
+
   li {
     border-bottom: 1px solid $medium-gray;
+
     a {
       font-size: rem-calc(12);
       text-transform: uppercase;
@@ -740,6 +743,7 @@ $alpha-album: .5;
     display: inline-block;
     margin-left: rem-calc(10);
   }
+
   a {
     color: $dark-gray;
   }
@@ -756,7 +760,7 @@ $alpha-album: .5;
     padding: 0;
     // background-color: rgba($color: $primary-color, $alpha: 0.1);
     // border-bottom: none;
-  
+
     > a {
       color: $primary-color;
       display: block;
@@ -783,6 +787,7 @@ $alpha-album: .5;
       }
     }
   }
+
   span {
     display: inline-block;
     vertical-align: sub;
@@ -791,25 +796,30 @@ $alpha-album: .5;
   .accordion {
     border-radius: $global-radius;
   }
+
   .accordion-item {
     background-color: lighten($color: $primary-color, $amount: 30%);
     transition: background-color .2s linear;
 
     &.is-active, &:hover {
       background-color: $primary-color;
+
       .accordion-title {
         color: lighten($color: $primary-color, $amount: 30%);
       }
     }
+
     i {
       display: inline-block;
       opacity: 0.5;
     }
   }
+
   .accordion-title {
     font-weight: 400;
     font-size: rem-calc(12);
   }
+
   .accordion-content {
     background-color: $primary-color;
     height: rem-calc(176);
@@ -837,13 +847,75 @@ $alpha-album: .5;
   h3 {
     font-size: rem-calc(20);
   }
+
   a {
     color: $white;
   }
+
   p {
     margin-bottom: rem-calc(5);
     font-size: rem-calc(10);
     color: rgba($color: $white, $alpha: 0.9);
     text-transform: uppercase;
   }
+}
+
+#scheduleModal {
+  p {
+    color: $light-gray;
+  }
+
+  figure {
+    height: rem-calc(300);
+    overflow: hidden;
+    @extend .position-relative;
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: inline-block;
+      padding: rem-calc(10 20);
+      font-size: rem-calc(12);
+      @extend .text-uppercase;
+      background-color: rgba($alert-color, .4);
+      color: $white;
+    }
+
+    img {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      @extend .position-absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0);
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 33%, rgba(0, 0, 0, 1) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(33%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 33%, rgba(0, 0, 0, 1) 100%);
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 33%, rgba(0, 0, 0, 1) 100%);
+      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 33%, rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 33%, rgba(0, 0, 0, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+    }
+  }
+
+  .close-button {
+    z-index: 99;
+  }
+}
+
+.text-info {
+  color: lighten($primary-color, 25%);
+  font-size: rem-calc(14);
 }

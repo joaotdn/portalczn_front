@@ -1,8 +1,5 @@
 import $ from 'jquery';
 import 'what-input';
-
-window.jQuery = $;
-
 import './lib/foundation-explicit-pieces';
 import './lib/offcanvas';
 import './lib/menuScroll';
@@ -13,5 +10,9 @@ import './lib/cycle-settings';
 import './lib/frameRadio';
 import './lib/fontSize';
 import './lib/videoOptions';
+import './lib/quotations';
+import './lib/openWheather';
+import './lib/showVideoOnModal';
 
+window.jQuery = $;
 $(document).foundation();

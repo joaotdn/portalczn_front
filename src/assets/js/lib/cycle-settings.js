@@ -19,3 +19,7 @@ slideshow.on( 'cycle-paused', function( e, opts ) {
 slideshow.on( 'cycle-resumed', function( e, opts, timeoutRemaining ) {
     progress.animate({ width: '100%' }, timeoutRemaining, 'linear' );
 });
+
+$( '.cycle-slideshow' ).on( 'cycle-post-initialize', function() {
+    $('#features-slideshow').removeClass('hide');
+});

@@ -158,3 +158,9 @@ a.tv-link {
     }
   }
 }
+
+.current-menu-item, .current_page_item {
+  a {
+    color: $alert-color;
+  }
+}
