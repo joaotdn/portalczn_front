@@ -67,3 +67,7 @@ a {
 .bg-black {
   background-color: $black;
 }
+
+.dropdown-pane {
+  z-index: 999;
+}

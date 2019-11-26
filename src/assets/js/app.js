@@ -13,6 +13,11 @@ import './lib/videoOptions';
 import './lib/quotations';
 import './lib/openWheather';
 import './lib/showVideoOnModal';
+import './lib/updateModalEvent';
+import './lib/loteriaCaixa';
+import loteriaCaixa from "./lib/loteriaCaixa";
+
+loteriaCaixa();
 
 window.jQuery = $;
 $(document).foundation();
